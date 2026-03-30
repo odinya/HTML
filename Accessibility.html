@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button role="button">Click me</button>
+    <a href="#" role="link">Read more</a>
+    <h2 role="heading">Important Information</h2>
+
+    <!--In this example, the <button>, <a>, and <h2> elements have ARIA roles 
+ applied to them using the roleattribute. The <button>element is given the role of 
+"button", the <a> element is given the role of "link", and the <h2> element is 
+given the role of "heading". These roles help assistive technologies 
+understand the intended purpose of each element, enhancing the accessibility of the
+content.-->
+
+    <button aria-expanded="true">Toggle menu</button>
+    <input type="checkbox" aria-checked="false" />
+    <div aria-hidden="true">This content is hidden from screen readers.</div>
+    <!--In this example, the <button> element uses aria-expanded to indicate that 
+the menu is currently open, the <input> element uses aria-checked to indicate 
+that the checkbox is unchecked, and the <div> element uses aria-hidden to 
+hide its content from screen readers. These ARIA attributes enhance the accessibility 
+and understanding of the elements for users of assistive technologies.
+
+Again, to ensure your ARIA implementations are effective, 
+it's important to test your web application with screen readers 
+and other assistive technologies. This will help you verify that the added ARIA roles, 
+states, and properties are accurately conveyed to users with disabilities.
+-->
+  </body>
+</html>
