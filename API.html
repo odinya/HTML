@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Geolocation Example</title>
+  </head>
+  <body>
+    <h1>Your Location</h1>
+    <p>Click the button to get your current location.</p>
+
+    <button id="getLocation">Get Location</button>
+
+    <p id="result"></p>
+
+    <script>
+      const getLocationButton = document.getElementById("getLocation");
+      const resultElement = document.getElementById("result");
+
+      getLocationButton.addEventListener("click", () => {
+        if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition((position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            resultElement.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+          });
+        } else {
+          resultElement.textContent =
+            "Geolocation is not supported by your browser.";
+        }
+      });
+    </script>
+    <!--Let's break the code down to see how it works:
+
+HTML Structure – it sets up a simple webpage with a title, a button that says 
+"Get Location", and a paragraph where the location will be displayed.
+JavaScript Functionality – this is what happens when someone clicks the 
+"Get Location" button:
+The script first checks if the user's browser supports the Geolocation API.
+If the browser supports it, the script asks the browser for the user's current position.
+Once it gets the position, it extracts the latitude and longitude from the position data 
+and displays it in the paragraph.
+If the Geolocation API is not supported by the user's browser, 
+it displays a message saying "Geolocation is not supported by your browser."
+If the script section looks daunting initially, it's okay. 
+The purpose of this example is to showcase the types of functionalities 
+you can integrate into your websites by utilizing APIs.
+
+Think of APIs as "black boxes" – you don't need to know all the inner workings to use them. 
+The key takeaway is recognizing that these tools enable you to enhance your site with 
+advanced features without having to build everything from scratch.-->
+    <audio controls>
+      <source
+        src="/uploads/media/default/0001/04/your-audio-file.mp3"
+        type="audio/mp3"
+      />
+      Your browser does not support the audio element.
+    </audio>
+    <!--The code snippet adds an audio player to your webpage that plays a song. 
+The controls attribute adds play, pause, and volume controls automatically, 
+so you don't have to do anything else to get a basic player running. If you want to customize it, 
+you can start exploring the API's capabilities with JavaScript in the third part of the 
+Web Development Essentials series – Web Dev Essentials: JavaScript.-->
+    // Save the theme to local storage localStorage.setItem('theme', 'dark'); //
+    Retrieve the theme when the user comes back const userTheme =
+    localStorage.getItem('theme'); document.body.classList.add(userTheme); //
+    Applies the 'dark' theme
+    <!--Let's break down this JavaScript code into simple terms:
+    
+Saving a theme setting – the code starts by saving a setting on your computer 
+that tells the website what theme you prefer, in this case, a "dark" theme. 
+It's like leaving a note for yourself so you remember something later.
+How it saves – it uses something called localStorage to save this note. 
+Think of localStorage as a small, 
+private storage space on your computer where the website can save bits of information. 
+Here, it saves a piece of information with the label "theme" and assigns it the value "dark".
+Getting the theme back – later, when you come back to the website, 
+the code looks into that storage space to find the note it left earlier. 
+It checks for the "theme" label to see what you preferred.
+Applying your preference – once it finds that note and sees "dark", 
+it knows you prefer the dark theme. So, it changes the website's appearance to dark mode. 
+This is done by adding "dark" to the website's list of characteristics (specifically, 
+to the body of the webpage), which triggers the dark theme to activate.-->
+  </body>
+</html>
